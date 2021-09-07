@@ -103,10 +103,10 @@ function findIDs(){
  */
 function addBook(title,author,libraryID){
     const newBook = {};
-    //   title = document.getElementById("title"); //retrieves the book title from the title textbox
-    // //finish the implementation -- get the author, create a book object, and add to the library array
-    //  author = document.getElementById("author");
-    //  libraryID = document.getElementById("libraryID");
+     const title = document.getElementById("title"); //retrieves the book title from the title textbox
+    //finish the implementation -- get the author, create a book object, and add to the library array
+    const  author = document.getElementById("author");
+    const  libraryID = document.getElementById("libraryID");
     
 
     newBook.title = title;

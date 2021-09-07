@@ -42,6 +42,20 @@ function showAuthor(){
     textArea.innerHTML = authorString;
 
 }
+/**
+ * Event handler to display library IDs sorted alphabetically
+ * @returns {undefined}
+ */
+function showLibraryID(){
+
+    const bookId = findIDs();
+    bookId.sort();
+
+    const bookIdString = bookId.join("\n");
+    let textArea = document.getElementById("idDisplayArea");
+    textArea.innerHTML = bookIdString;
+
+}
 
 /**
  * 

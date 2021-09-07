@@ -140,10 +140,10 @@ function scramble() {
 
 function addBookToLibrary(){
     const newBook ={};
-     const title = document.getElementById("title"); //retrieves the book title from the title textbox
+     const title = document.getElementById("title").value; //retrieves the book title from the title textbox
     //finish the implementation -- get the author, create a book object, and add to the library array
-    const  author = document.getElementById("author");
-    const  libraryID = document.getElementById("libraryID");
+    const  author = document.getElementById("author").value;
+    const  libraryID = document.getElementById("libraryID").value;
 
     newBook.title = title;
     newBook.author = author;
@@ -151,10 +151,8 @@ function addBookToLibrary(){
     
     library.push(newBook); 
     
-    const newBookString = titles.join("\n");
-
-    let textArea = document.getElementById("displayArea");
-    textArea.innerHTML = newBookString;
+    
+  document.getElementById("displayArea").innerHTML = newBook.title + "\n" + newBook.author+"\n" + newBook.libraryID;
 
 }
 

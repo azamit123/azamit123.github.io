@@ -103,12 +103,7 @@ function findIDs(){
  */
 function addBook(title,author,libraryID){
     const newBook = {};
-    //  const title = document.getElementById("title"); //retrieves the book title from the title textbox
-    // //finish the implementation -- get the author, create a book object, and add to the library array
-    // const  author = document.getElementById("author");
-    // const  libraryID = document.getElementById("libraryID");
     
-
     newBook.title = title;
     newBook.author = author;
     newBook.libraryID = libraryID;
@@ -142,4 +137,24 @@ function scramble() {
   textArea.innerHTML = str;
 }
 
+
+function addBookToLibrary(){
+    const newBook ={};
+     const title = document.getElementById("title"); //retrieves the book title from the title textbox
+    //finish the implementation -- get the author, create a book object, and add to the library array
+    const  author = document.getElementById("author");
+    const  libraryID = document.getElementById("libraryID");
+
+    newBook.title = title;
+    newBook.author = author;
+    newBook.libraryID = libraryID;
+    
+    library.push(newBook); 
+    
+    const newBookString = titles.join("\n");
+
+    let textArea = document.getElementById("displayArea");
+    textArea.innerHTML = newBookString;
+
+}
 

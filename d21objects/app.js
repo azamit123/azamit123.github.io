@@ -119,3 +119,27 @@ function addBook(title,author,libraryID){
 }
 
 
+function scramble() {
+  const title = findTitles();
+  let allWords = [];
+  for (let oneTitle of title) {
+    const titleArray = oneTitle.split(" ");
+    for (let words of titleArray) {
+      allWords.push(words);
+    }
+  }
+ 
+  const asc = allWords.sort((aaa, bbb) => aaa.length - bbb.length);
+  let str = asc[0];
+  for (let i = 1; i < asc.length; i++) {
+    if (asc[i - 1].length === asc[i].length) {
+      str += " " + asc[i];
+    } else {
+      str += "\n" + asc[i];
+    }
+  }
+  let textArea = document.getElementById("displayScrumble");
+  textArea.innerHTML = str;
+}
+
+

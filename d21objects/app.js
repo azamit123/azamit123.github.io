@@ -28,6 +28,22 @@ function showTitles() {
 }
 
 /**
+ * Event handler to display library authors sorted alphabetically
+ * @returns {undefined}
+ */
+function showAuthor(){
+
+    const authors = findAuthors();
+
+    authors.sort();
+
+    const authorString = authors.join("\n");
+    let textArea = document.getElementById("displayArea");
+    textArea.innerHTML = authorString;
+
+}
+
+/**
  * 
  * @return {object} array holding all titles as elements
  */

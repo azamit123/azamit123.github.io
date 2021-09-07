@@ -38,7 +38,7 @@ function showAuthor(){
     authors.sort();
 
     const authorString = authors.join("\n");
-    let textArea = document.getElementById("displayArea");
+    let textArea = document.getElementById("authorDisplayArea");
     textArea.innerHTML = authorString;
 
 }

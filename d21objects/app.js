@@ -150,8 +150,7 @@ function addBookToLibrary(){
     newBook.libraryID = libraryID;
     
     library.push(newBook); 
-    
-    
+
   document.getElementById("displayArea").innerHTML = newBook.title + "\n" + newBook.author+"\n" + newBook.libraryID;
 
 }

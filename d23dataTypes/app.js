@@ -2,7 +2,7 @@
 /* eslint-disable */
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-//  module.exports = { ucFirst, getMaxSubSum, truncate , camelize, checkSpam,extractCurrencyValue}; //add all of your function names here that you need for the node mocha tests
+//   module.exports = { ucFirst, getMaxSubSum, truncate , camelize, checkSpam,extractCurrencyValue}; //add all of your function names here that you need for the node mocha tests
 
 
 
@@ -43,13 +43,17 @@ function ucFirst(str) {
  */
 function getMaxSubSum(arr) {
 
-    let sum =0;
-    for(const elements of arr){
-        sum+=elements;
-    }
+    let maxSum = 0; 
+for (let i = 0; i < arr.length; i++) { 
+    let sumFixedStart = 0;
+for (let j = i; j < arr.length; j++) {
+sumFixedStart += arr[j];
+maxSum = Math.max(maxSum, sumFixedStart); }
+}
+return maxSum; }
     
 
-}
+
 
 
 function camelize(str) {

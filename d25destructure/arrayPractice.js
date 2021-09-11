@@ -38,10 +38,16 @@ function findEvenAge(arr){
 }
 
 function includesEvenNum(arr){
-    return arr.includes(item%2==0);
+    let num = arr.find(item => item%2===0);
+    return arr.includes(num);
 
 }
 
 function includesEvenAge(arr){
-    return arr.includes(people.age%2===0)
+    let people = arr.find(item => item.age%2===0);
+    if(people.age!== undefined){
+        return true;
+    }else {
+        return false;
+    }
 }

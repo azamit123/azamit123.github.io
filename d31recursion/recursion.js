@@ -1,11 +1,11 @@
 "use strict";
 
-// const { hasSubscribers } = require("diagnostics_channel");
+ const { hasSubscribers } = require("diagnostics_channel");
 
 /* global exports */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-//  module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
+//   module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
 
 /**
  * 
@@ -69,9 +69,9 @@ let list = {
  */
   function outputList(listObj){
     if(listObj.next===null){
-        console.log(listObj.value +" ");
+        console.log(listObj.value);
     }else{
-        console.log(listObj.value+ " ");
+        console.log(listObj.value);
         outputList(listObj.next);      
     }
 
@@ -93,6 +93,7 @@ let list = {
 /**
  * 
  * @param {object} listObj a list of objects.
+ * @returns{undefined} doesnt return anything.
  */
   function reverseList(listObj){
       if(listObj.next===null){

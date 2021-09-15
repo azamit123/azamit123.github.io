@@ -31,7 +31,6 @@ let list = {
     }
   };
 
-
 describe("recursion tests", function () {
     it("tests summing by recursion", function () {
         assert.strictEqual(sumTo(5), 15);

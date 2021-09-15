@@ -1,11 +1,11 @@
 "use strict";
 
- const { hasSubscribers } = require("diagnostics_channel");
+//  const { hasSubscribers } = require("diagnostics_channel");
 
 /* global exports */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-//   module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
+   module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
 
 /**
  * 
@@ -66,6 +66,7 @@ let list = {
 /**
  * 
  * @param {Object} listObj a list of objects.
+ *  @returns{undefined} doesnt return anything.
  */
   function outputList(listObj){
     if(listObj.next===null){
@@ -81,6 +82,7 @@ let list = {
 /**
  * 
  * @param {Object} listObj a list of objects.
+ *  @returns{undefined} doesnt return anything.
  */
   function outputListLoop(listObj){
     while(listObj!==null){
@@ -150,48 +152,39 @@ let list = {
 // value: null,
 // };
 
-// /**
-//  * 
-//  * @param {object} node node objects.
-//  */
-// function showValueName(node){
-//     if(node.children==null){
-//         console.log(`${node.name} : ${node.value} `);
-//     }
-//     else{
-//         for(let subNode of node.children){
-//            showValueName(subNode);
-//         }
-//         console.log(`${node.name} : ${node.value} `);
-//     }
-//     };
+/**
+ * 
+ * @param {object} node node objects.
+ */
+function showValueNameRecursion(node){
+    if(node.children==null){
+        console.log(`${node.name} : ${node.value} `);
+    }
+    else{
+        for(let subNode of node.children){
+           showValueName(subNode);
+        }
+        console.log(`${node.name} : ${node.value} `);
+    }
+    };
 
 
-//     function showValueNameLooping(node){
-//         if(node.children!==null){
-//         for(let subNode of node.children){
-//                console.log(`${subNode.name} : ${subNode.value}`); 
-//             }
-//         }else if(node.children==null){
-//             console.log(`${node.name}: ${node.value}`);
-//         }        
+    function showValueNameLooping(node){
+        if(node.children!==null){
+        for(let subNode of node.children){
+               console.log(`${subNode.name} : ${subNode.value}`); 
+            }
+        }else if(node.children==null){
+            console.log(`${node.name}: ${node.value}`);
+        }        
  
-//     }
+    }
 
 
 
-//   console.log(showValueNameLooping(node1)); 
+  console.log(showValueNameLooping(node1)); 
 
-
-
-
-  
-   
-  
-
-
-
-//   console.log(reverseListLoop(list));
+  console.log(reverseListLoop(list));
          
 
 

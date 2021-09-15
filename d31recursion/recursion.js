@@ -1,5 +1,7 @@
 "use strict";
 
+// const { hasSubscribers } = require("diagnostics_channel");
+
 /* global exports */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
@@ -7,7 +9,7 @@
 
 /**
  * 
- * @param {number} num adding every number until num
+ * @param {number} num any number
  * @returns {number} the sum of all the numbers from 1 - num.
  */
 function sumTo(num){
@@ -18,10 +20,9 @@ function sumTo(num){
     }
 }
 
-
 /**
  * 
- * @param {number} num  multiplying every number until num
+ * @param {number} num  any number greater than one.
  * @returns {number} the product of all the numbers from 1-num
  */
 function factorial(num){
@@ -32,6 +33,12 @@ function factorial(num){
     }
 }
 
+/**
+ * 
+ * @param {number} num any number
+ * @returns{number} sum of the fibonacci numbers.
+ */
+
 function fibonacci(num){
 if(num<=1){
     return num;
@@ -39,7 +46,6 @@ if(num<=1){
     return fibonacci(num-1) + fibonacci(num-2);
 }
 }
-
 
 
 let list = {
@@ -57,80 +63,15 @@ let list = {
   };
 
 
-
-
-let node3 = {
- 
-name: "p",
-value: "This is text in the a paragraph", 
-children: null
-};
-
-let node4 = { 
-    name: "label", 
-    value: "Name", 
-    children: null
-};
-
-let node5 = {
-name: "input",
-value: "this was typed by a user", 
-children: null
-};
-
-let node2 = {
-name: "div",
-value: null,
-children: [node4, node5]
-};
-
-let node1 = {
-name: "body",
-children: [node2, node3], 
-value: null,
-};
-
-/**
- * 
- * @param {object} node node objects.
- */
-function showValueName(node){
-    if(node.children==null){
-        console.log(`${node.name} : ${node.value}`);
-    }
-    else{
-        for(let subNode of node.children){
-           showValueName(subNode);
-        }
-        console.log(`${node.name} : ${node.value}`);
-    }
-    };
-
-
-    function showValueNameLooping(node){
-        if(node.children!==null){
-        for(let subNode of node.children){
-               console.log(`${subNode.name} : ${subNode.value}`); 
-            }
-        }else{
-            console.log(`${node.name}: ${node.value}`);
-        }        
- 
-    }
-
-
-
-  console.log(showValueNameLooping(node1)); 
-
 /**
  * 
  * @param {Object} listObj a list of objects.
  */
   function outputList(listObj){
     if(listObj.next===null){
-        console.log(listObj.value);
+        console.log(listObj.value +" ");
     }else{
-        console.log(listObj.value);
+        console.log(listObj.value+ " ");
         outputList(listObj.next);      
     }
 
@@ -163,10 +104,93 @@ function showValueName(node){
   }
 
 
-  function reverseListLoop(){
+  function reverseListLoop(listObj){
+  let node = listObj;
+  let previous = null;
 
-
+  while(node) {  
+    let temp = node.next;
+    node.next = previous;
+    previous = node;
+   
+    node = temp;
   }
+  return previous;
+}
+
+// let node3 = {
+ 
+// name: "p",
+// value: "This is text in the a paragraph", 
+// children: null
+// };
+
+// let node4 = { 
+//     name: "label", 
+//     value: "Name", 
+//     children: null
+// };
+
+// let node5 = {
+// name: "input",
+// value: "this was typed by a user", 
+// children: null
+// };
+
+// let node2 = {
+// name: "div",
+// value: null,
+// children: [node4, node5]
+// };
+
+// let node1 = {
+// name: "body",
+// children: [node2, node3], 
+// value: null,
+// };
+
+// /**
+//  * 
+//  * @param {object} node node objects.
+//  */
+// function showValueName(node){
+//     if(node.children==null){
+//         console.log(`${node.name} : ${node.value} `);
+//     }
+//     else{
+//         for(let subNode of node.children){
+//            showValueName(subNode);
+//         }
+//         console.log(`${node.name} : ${node.value} `);
+//     }
+//     };
+
+
+//     function showValueNameLooping(node){
+//         if(node.children!==null){
+//         for(let subNode of node.children){
+//                console.log(`${subNode.name} : ${subNode.value}`); 
+//             }
+//         }else if(node.children==null){
+//             console.log(`${node.name}: ${node.value}`);
+//         }        
+ 
+//     }
+
+
+
+//   console.log(showValueNameLooping(node1)); 
+
+
+
+
+  
+   
+  
+
+
+
+//   console.log(reverseListLoop(list));
          
 
 

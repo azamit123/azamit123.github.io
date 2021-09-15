@@ -3,7 +3,7 @@
 /* global exports */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-// module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
+//  module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
 
 /**
  * 
@@ -40,4 +40,134 @@ if(num<=1){
 }
 }
 
-console.log(fibonacci(7));
+
+
+let list = {
+    value: 1,
+    next: {
+      value: 2,
+      next: {
+        value: 3,
+        next: {
+          value: 4,
+          next: null
+        }
+      }
+    }
+  };
+
+
+
+
+let node3 = {
+ 
+name: "p",
+value: "This is text in the a paragraph", 
+children: null
+};
+
+let node4 = { 
+    name: "label", 
+    value: "Name", 
+    children: null
+};
+
+let node5 = {
+name: "input",
+value: "this was typed by a user", 
+children: null
+};
+
+let node2 = {
+name: "div",
+value: null,
+children: [node4, node5]
+};
+
+let node1 = {
+name: "body",
+children: [node2, node3], 
+value: null,
+};
+
+/**
+ * 
+ * @param {object} node node objects.
+ */
+function showValueName(node){
+    if(node.children==null){
+        console.log(`${node.name} : ${node.value}`);
+    }
+    else{
+        for(let subNode of node.children){
+           showValueName(subNode);
+        }
+        console.log(`${node.name} : ${node.value}`);
+    }
+    };
+
+
+    function showValueNameLooping(node){
+        if(node.children!==null){
+        for(let subNode of node.children){
+               console.log(`${subNode.name} : ${subNode.value}`); 
+            }
+        }else{
+            console.log(`${node.name}: ${node.value}`);
+        }        
+ 
+    }
+
+
+
+  console.log(showValueNameLooping(node1)); 
+
+/**
+ * 
+ * @param {Object} listObj a list of objects.
+ */
+  function outputList(listObj){
+    if(listObj.next===null){
+        console.log(listObj.value);
+    }else{
+        console.log(listObj.value);
+        outputList(listObj.next);      
+    }
+
+  }
+
+
+/**
+ * 
+ * @param {Object} listObj a list of objects.
+ */
+  function outputListLoop(listObj){
+    while(listObj!==null){
+        console.log(listObj.value);
+        listObj = listObj.next;
+    }
+
+  }
+
+/**
+ * 
+ * @param {object} listObj a list of objects.
+ */
+  function reverseList(listObj){
+      if(listObj.next===null){
+          console.log(listObj.value);
+      }else{
+          reverseList(listObj.next);
+          console.log(listObj.value);
+      }
+  }
+
+
+  function reverseListLoop(){
+
+
+  }
+         
+
+
+  

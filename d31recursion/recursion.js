@@ -5,7 +5,7 @@
 /* global exports */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-   module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
+//    module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
 
 /**
  * 
@@ -108,49 +108,48 @@ let list = {
 
 
   function reverseListLoop(listObj){
-  let node = listObj;
-  let previous = null;
+  let nodes = []
+  let temp = listObj;
 
-  while(node) {  
-    let temp = node.next;
-    node.next = previous;
-    previous = node;
-   
-    node = temp;
+  while(temp!==null) {  
+    nodes.push(temp.value);
+    temp = temp.next;
   }
-  return previous;
+ for(let i= nodes.length-1;i>=0;i--){
+     console.log(nodes[i]);
+ }
 }
 
-// let node3 = {
+let node3 = {
  
-// name: "p",
-// value: "This is text in the a paragraph", 
-// children: null
-// };
+name: "p",
+value: "This is text in the a paragraph", 
+children: null
+};
 
-// let node4 = { 
-//     name: "label", 
-//     value: "Name", 
-//     children: null
-// };
+let node4 = { 
+    name: "label", 
+    value: "Name", 
+    children: null
+};
 
-// let node5 = {
-// name: "input",
-// value: "this was typed by a user", 
-// children: null
-// };
+let node5 = {
+name: "input",
+value: "this was typed by a user", 
+children: null
+};
 
-// let node2 = {
-// name: "div",
-// value: null,
-// children: [node4, node5]
-// };
+let node2 = {
+name: "div",
+value: null,
+children: [node4, node5]
+};
 
-// let node1 = {
-// name: "body",
-// children: [node2, node3], 
-// value: null,
-// };
+let node1 = {
+name: "body",
+children: [node2, node3], 
+value: null,
+};
 
 /**
  * 
@@ -169,23 +168,53 @@ function showValueNameRecursion(node){
     };
 
 
+/**
+ * 
+ * @param {Object} node node object.
+ */
     function showValueNameLooping(node){
-        if(node.children!==null){
-        for(let subNode of node.children){
-               console.log(`${subNode.name} : ${subNode.value}`); 
+        console.log(`${node.name} : ${node.value} `);
+            if(node.children!==null){
+                for(const kid of node.children){
+                   console.log(`${kid.name} : ${kid.value} `);
+                   if(kid.children!==null){
+                       for(const baby of kid.children){
+                         console.log(`${baby.name} : ${baby.value} `);  
+                       }
+                   }
+                }
             }
-        }else if(node.children==null){
-            console.log(`${node.name}: ${node.value}`);
-        }        
- 
+          
+        
     }
 
 
+    const COLLECTION_NAMES =[];
 
-  console.log(showValueNameLooping(node1)); 
+    function collectValues(node){
+         COLLECTION_NAMES.push(`${node.name} : ${node.value}`); 
+        if(node.children!==null){
+            for(const kid of node.children){
+                COLLECTION_NAMES.push(`${kid.name} : ${kid.value}`);
+                if(kid.children!==null){
+                    for(const baby of kid.children){
+                       COLLECTION_NAMES.push(`${baby.name} : ${baby.value}`); 
+                    }
+                }
+            }
+             
+        
+    }
+            return COLLECTION_NAMES;
+     }
 
-  console.log(reverseListLoop(list));
-         
+
+     
+    
+showValueNameLooping(node1);
+
+
+       
 
 
   

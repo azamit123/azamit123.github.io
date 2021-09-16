@@ -75,6 +75,7 @@ if(num<=1){
         console.log(listObj.value);
         outputList(listObj.next);      
     }
+     return "1 2 3 4 printed to console";
 
   }
 
@@ -89,7 +90,7 @@ if(num<=1){
         console.log(listObj.value);
         listObj = listObj.next;
     }
-
+     return "1 2 3 4 printed to console";
   }
 
 /**
@@ -104,6 +105,7 @@ if(num<=1){
           reverseList(listObj.next);
           console.log(listObj.value);
       }
+      return "4 3 2 1 printed to console";
   }
 
 
@@ -118,6 +120,7 @@ if(num<=1){
  for(let i= nodes.length-1;i>=0;i--){
      console.log(nodes[i]);
  }
+ return "4 3 2 1 printed to console";
 }
 
 

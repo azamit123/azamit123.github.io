@@ -160,7 +160,7 @@ function showValueNameRecursion(node){
     }
 
 
-    const COLLECTION_NAMES =[];
+    // const COLLECTION_NAMES =[];
 
     function collectValues(node){
          COLLECTION_NAMES.push(`${node.name} : ${node.value}`); 

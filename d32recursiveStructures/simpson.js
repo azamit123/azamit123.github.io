@@ -15,6 +15,84 @@ const maggie = new TreeNode('Maggie');
 abe.descendents.push(homer); 
 homer.descendents.push(bart, lisa, maggie);
 
+
+
+function LinkedList(value,next){
+    this.value = value;
+     this.next = next;
+}
+const maggie1 = new LinkedList('Maggie',null);
+const lisa1 = new LinkedList('Lisa',maggie1);
+const bart1 = new LinkedList('Bart',lisa1);
+const homer1 = new LinkedList('Homer',bart1); 
+const abe1 = new LinkedList('Abe',homer1);
+ 
+
+/**
+ * 
+ * @param {Object} list a linked list object.
+ * @param {string} str string to matched.
+ * @returns {Object} the matched name object/node.
+ */
+function findListNode(list,str){
+     if(list.value === str){
+        return list;
+
+    }else if(list.next!==null){
+        return (findListNode(list.next,str))    
+    }   
+}
+/**
+ * 
+ * @param {Object} list a node.
+ * @returns {string} the node value changed to uppercase.
+ */
+function allCaps(list){
+  list.value = list.value.toUpperCase();
+
+}
+/**
+ * 
+ * @param {Object} list a list of nodes
+ * @returns {string} modified name value.
+ */
+function addStars(list){
+     list.value = "***" + list.value + "***";
+}
+
+function reverseNode(list){
+       let reversed = "";
+    for(let i= list.value.length-1; i>=0;i--){
+        reversed+= list.value.charAt(i);
+    }
+    list.value = reversed;
+    
+}
+
+function treeModifier(list,modifierFun){
+        modifierFun(list);
+         if(list.next!==null){
+        treeModifier(list.next,modifierFun);
+    }
+}
+
+const TREE_COLLECTOR = [];
+/**
+ * 
+ * @param {Object} list the linkedlist object
+ * @returns {Array} a collection of the list value.
+ */
+function treeCollector(list){
+    TREE_COLLECTOR.push(list.value);
+    if(list.next!==null){
+        treeCollector(list.next);
+    }
+    return TREE_COLLECTOR;
+}
+
+ 
+ console.log(treeCollector(abe1));
+
 /**
  * 
  * @param {Object} simpsons its a tree like object.
@@ -80,4 +158,4 @@ function findSubtree(tree,str){
 
 
 
-  console.log(findSubtree(abe,"Maggie"));
+ 

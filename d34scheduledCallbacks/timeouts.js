@@ -39,7 +39,28 @@ function printNumbers2(from,too){
 
 }
 
-printNumbers2(3,9);
+
+/**
+ * 
+ * @param {number} from starting number to be printed.
+ * @param {number} too last number to be printed.
+ * @returns {undefined} 
+ */
+function printNumbers3(from,too){
+    let temp = from; 
+    setTimeout(function show(){
+//  i used alert so it can be seen on the browser.
+      if(temp < too){
+    console.log(`${temp} secs!!`);
+    setTimeout(show,5000);
+     }    
+        temp++;
+
+    }, 5000);
+
+}
+
+printNumbers3(3,9);
 
     
 

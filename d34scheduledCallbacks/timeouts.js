@@ -26,21 +26,20 @@ function printNumbers(from, too){
  */
 function printNumbers2(from,too){
     let temp = from;
-
-    let timer = 
-
+    let timer = temp+1000;
     let timerId = setInterval(() => {
-        console.log(`${temp} secs!!`);
+//  i used alert so it can be seen on the browser.
+        alert(`${temp} secs!!`);
         if(temp===too){
             clearInterval(timerId);
         }
         temp++;
 
-    }, (temp+1000));
+    }, (timer));
 
 }
 
-printNumbers(3,9);
+printNumbers2(3,9);
 
     
 

@@ -60,7 +60,9 @@ function printNumbers3(from,too){
 
 }
 
-printNumbers3(3,9);
+// printNumbers(3,9);
+ printNumbers2(3,9);
+// printNumbers3(3,9);
 
     
 

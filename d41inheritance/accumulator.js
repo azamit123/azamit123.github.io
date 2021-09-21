@@ -13,14 +13,15 @@
     function Accumulator(initialValue, increment){
     this.currentValue = initialValue;
     this.increment = increment;
-
-    this.accumulate = function(){
-        this.currentValue =this.currentValue + this.increment;
-        return this.currentValue;
-    },
-
-    this.report = function(){
-        return this.currentValue;
-    };
 }
 
+    Accumulator.prototype.accumulate = function(){
+        this.currentValue = this.currentValue + this.increment;
+        return this.currentValue;
+    };
+
+    Accumulator.prototype.report = function(){
+        return this.currentValue;
+    };
+
+ 

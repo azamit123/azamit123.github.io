@@ -1,7 +1,7 @@
 "use strict";
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-// module.exports = {Accumulator }; //add all of your function names here that you need for the node mocha tests
+module.exports = {Accumulator }; //add all of your function names here that you need for the node mocha tests
 
 
 /**
@@ -13,15 +13,16 @@
     function Accumulator(initialValue, increment){
     this.currentValue = initialValue;
     this.increment = increment;
+}
 
-    this.accumulate = function(){
-        this.currentValue =this.currentValue + this.increment;
-        return this.currentValue;
-    },
-
-    this.report = function(){
+    Accumulator.prototype.accumulate = function(){
+        this.currentValue = this.currentValue + this.increment;
         return this.currentValue;
     };
-}
+
+    Accumulator.prototype.report = function(){
+        return this.currentValue;
+    };
+
  
 

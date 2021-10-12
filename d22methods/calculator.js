@@ -8,18 +8,12 @@ const calculator = {
     },// implement this
 
     sum: function(){
-        return this.a + this.b;    
+        return a + b;    
     },
     mul: function(){
         return this.a*this.b;
     }
 };  
-
-
-
-
-
-
 
 
 

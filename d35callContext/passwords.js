@@ -15,7 +15,7 @@ function askPassword(ok, fail, password) {
 let user = {
 name: 'John',
 
-loginOk() {
+loginOk(x) {
  return `${this.name} logged in`;
 },
 
@@ -23,9 +23,6 @@ loginFail() {
  return `${this.name} failed to log in`;
 }, 
 };
-
-
-
 
 
 

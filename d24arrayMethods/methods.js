@@ -1,7 +1,7 @@
 "use strict"
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-// module.exports = { groupById, unique, filterRangeInPlace, filterRange, Calculator }; //add all of your function names here that you need for the node mocha tests
+ module.exports = { groupById, unique, filterRangeInPlace, filterRange, Calculator }; //add all of your function names here that you need for the node mocha tests
 
 
 
@@ -44,8 +44,8 @@ function filterRange(arr, a, b) {
 
   function Calculator() {
       this.calculations = {
-          "-" : (num1,num2) => num1 - num2,
-          "+" : (num1,num2)=> num1 + num2
+          ["-"] : (num1,num2) => num1 - num2,
+          ["+"] : (num1,num2)=> num1 + num2
       };
 
       this.calculate = function(str){
@@ -63,7 +63,6 @@ function filterRange(arr, a, b) {
           this.calculations[prop]=func;
 
       };
-
   }
 
 
@@ -87,11 +86,11 @@ function filterRange(arr, a, b) {
 
   function groupById(array) {
     
-    return array.reduce((user,currentUser)=>{
+    return array.reduce((user,currentUser)=> {
         user[currentUser.id] = currentUser;
         return user;
         
-    },{})
+    },{});
    
 
 }

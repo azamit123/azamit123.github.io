@@ -1,31 +1,46 @@
 "use strict";
 
+/**
+ * 
+ * @param {string} value a value for the object.
+ * @returns {Object} a new object.
+ */
 function TreeNode(value) { 
 this.value = value; 
 this.descendents = [];
 }
 // create nodes with values
-const abe = new TreeNode('Abe');
+const abe = new TreeNode("Abe");
  
-const homer = new TreeNode('Homer'); 
-const bart = new TreeNode('Bart');
-const lisa = new TreeNode('Lisa');
-const maggie = new TreeNode('Maggie');
+const homer = new TreeNode("Homer"); 
+const bart = new TreeNode("Bart");
+const lisa = new TreeNode("Lisa");
+const maggie = new TreeNode("Maggie");
 // associate root with is descendents 
 abe.descendents.push(homer); 
 homer.descendents.push(bart, lisa, maggie);
 
 
-
+/**
+ * 
+ * @param {string} value name value for th object.
+ * @param {Object} next connection with the next object.
+ * @returns {Object} a new object with values.
+ */
 function LinkedList(value,next){
     this.value = value;
      this.next = next;
 }
-const maggie1 = new LinkedList('Maggie',null);
-const lisa1 = new LinkedList('Lisa',maggie1);
-const bart1 = new LinkedList('Bart',lisa1);
-const homer1 = new LinkedList('Homer',bart1); 
-const abe1 = new LinkedList('Abe',homer1);
+const maggie1 = new LinkedList("Maggie",null);
+const lisa1 = new LinkedList("Lisa",maggie1);
+const bart1 = new LinkedList("Bart",lisa1);
+const homer1 = new LinkedList("Homer",bart1); 
+const abe1 = new LinkedList("Abe",homer1);
+
+
+console.log(treeCollector(abe1));
+displayNames(abe);
+
  
 
 /**
@@ -39,7 +54,7 @@ function findListNode(list,str){
         return list;
 
     }else if(list.next!==null){
-        return (findListNode(list.next,str))    
+        return (findListNode(list.next,str));   
     }   
 }
 /**
@@ -59,7 +74,11 @@ function allCaps(list){
 function addStars(list){
      list.value = "***" + list.value + "***";
 }
-
+/**
+ * 
+ * @param {Object} list a list of nodes
+ * @returns {string} modified name value.
+ */
 function reverseNode(list){
        let reversed = "";
     for(let i= list.value.length-1; i>=0;i--){
@@ -68,7 +87,12 @@ function reverseNode(list){
     list.value = reversed;
     
 }
-
+/**
+ * 
+ * @param {Object} list a list of objects
+ * @param {function} modifierFun function to modify the elements in the list.
+ * @returns {undefined}
+ */
 function treeModifier(list,modifierFun){
         modifierFun(list);
          if(list.next!==null){
@@ -91,11 +115,11 @@ function treeCollector(list){
 }
 
  
- console.log(treeCollector(abe1));
+ 
 
 /**
  * 
- * @param {Object} simpsons its a tree like object.
+ * @param {Object} simpsons its a tree  object.
  * @returns {undefined} nothing is returned just display.
  */
 function displayNames(simpsons){
@@ -111,13 +135,11 @@ function displayNames(simpsons){
 
 /**
  * 
- * @param {Object} tree 
- * @param {string} str a value to be found.
+ * @param {Object} tree a tree of objects
+ * @param {string} str a target to be checked.
  * @returns {boolean} true if str is found else false.
  */
 function findTarget(tree,str){
-     if(str===""){
-        return; }
     if(tree.value===str){
             return true;
          }
@@ -135,7 +157,7 @@ function findTarget(tree,str){
 
 /**
  * 
- * @param {Object} tree 
+ * @param {Object} tree a tree of objects
  * @param {string} str a name to be matched.
  * @returns {Object} sub tree of the matche name.
  */

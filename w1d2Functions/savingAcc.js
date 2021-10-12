@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 // DEFINING TABLE
 /* Input - amount deposited, annual interest rate and number of years saved
    Output - total amount compounded

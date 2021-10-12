@@ -5,7 +5,7 @@
 /* global exports */
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
 */
-//    module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
+    module.exports = { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop}; //add all of your function names here that you need for the node mocha tests
 // 
 /**
  * 
@@ -38,7 +38,6 @@ function factorial(num){
  * @param {number} num any number
  * @returns{number} sum of the fibonacci numbers.
  */
-
 function fibonacci(num){
 if(num<=1){
     return num;
@@ -108,9 +107,13 @@ if(num<=1){
       return "4 3 2 1 printed to console";
   }
 
-
+/**
+ * 
+ * @param {Object} listObj list of objects.
+ * @returns {undefined} returns nothing just print to the console.
+ */
   function reverseListLoop(listObj){
-  let nodes = []
+  let nodes = [];
   let temp = listObj;
 
   while(temp!==null) {  
@@ -128,23 +131,25 @@ if(num<=1){
 /**
  * 
  * @param {object} node node objects.
+ * @returns{undefined} no return.
  */
-function showValueNameRecursion(node){
+function showValueRecursive(node){
     if(node.children==null){
         console.log(`${node.name} : ${node.value} `);
     }
     else{
         for(let subNode of node.children){
-           showValueName(subNode);
+           showValueRecursive(subNode);
         }
         console.log(`${node.name} : ${node.value} `);
     }
-    };
+    }
 
 
 /**
  * 
  * @param {Object} node node object.
+ * @returns {undefined} no return.
  */
     function showValueNameLooping(node){
         console.log(`${node.name} : ${node.value} `);
@@ -163,8 +168,12 @@ function showValueNameRecursion(node){
     }
 
 
-    // const COLLECTION_NAMES =[];
-
+     const COLLECTION_NAMES =[];
+/**
+ * 
+ * @param {Object} node list of objects.
+ * @returns{Array} a collection of names.
+ */
     function collectValues(node){
          COLLECTION_NAMES.push(`${node.name} : ${node.value}`); 
         if(node.children!==null){

@@ -1,0 +1,72 @@
+#wrapper {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+}
+
+#container {
+  display: grid;
+  grid-template-areas:
+    "toolbar toolbar"
+    "imageDiv cont";
+  width: 100%;
+}
+
+#toolbar {
+  grid-area: toolbar;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+.toolbar {
+  font-size: 20px;
+  color: white;
+  /* border: 3px solid #f6b443; */
+  padding: 20px;
+}
+
+#imageDiv {
+  padding-top: 20%;
+  padding-left: 20%;
+  grid-area: imageDiv;
+  /* background-color: black; */
+  border: 4px solid #f6b443;
+  background-image: linear-gradient(to left, gray 0%, black 100%);
+  background-blend-mode: multiply;
+}
+#content {
+  grid-area: cont;
+  padding-top: 30%;
+  font-size: 20px;
+  color: white;
+  padding-left: 20%;
+  /* background-color: black; */
+  background-image: linear-gradient(to right, gray -2%, black 100%);
+  background-blend-mode: multiply;
+}
+#mypic {
+  position: relative;
+  right: 15px;
+  padding-left: 10%;
+  z-index: 4;
+}
+span {
+  color: #f6b443;
+  font-size: 40px;
+}
+
+#moreAboutme {
+  float: left;
+  width: 50%;
+}
+
+.bottom {
+  text-align: center;
+  font-size: 40px;
+  border: 4px solid #f6b443;
+  border-radius: 80px;
+  background-color: black;
+  height: 10%;
+  margin-top: 10%;
+}

@@ -1,3 +1,8 @@
+body {
+  /* background-image: url("movinglogin.gif"); */
+  background: url(movinglogin.gif) no-repeat center center fixed;
+  background-size: cover;
+}
 #container {
   display: grid;
   grid-template-areas:
@@ -14,20 +19,27 @@
 }
 
 .toolbar {
-  font-size: 20px;
   color: white;
   padding: 20px;
 }
 
-h1,
+h3,
 p {
   color: white;
 }
-
 span {
   color: #f6b443;
 }
-
-h5 {
+.info {
   color: #f6b443;
 }
+
+img {
+  width: 100%;
+}
+#hiddenBar {
+  display: none;
+}
+/* .row {
+  width: 50%;
+} */

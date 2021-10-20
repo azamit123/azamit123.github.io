@@ -1,0 +1,134 @@
+<html>
+<title>Manager</title>
+
+<head>
+    <link rel="stylesheet" href="./manager.css">
+    <script src="./manager.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div id="wrapper" class="container-fluid bg-dark bg-gradient">
+        <div id="container">
+            <div id="toolbar">
+                <a style="text-decoration: none;" href="./index.html" target="_blank">
+                    <div class="toolbar"> Home</div>
+                </a>
+
+
+                <a style="text-decoration: none;" href="./aboutme.html" target="_blank">
+                    <div class="toolbar">About Me</div>
+                </a>
+
+                <a style="text-decoration: none;" href="./courses.html" target="_blank">
+                    <div class="toolbar">Courses</div>
+                </a>
+
+                <a style="text-decoration: none;" href="./project.html">
+                    <div class="toolbar">Projects</div>
+                </a>
+
+                <a style="text-decoration: none;" href="./contact.html" target="_blank">
+                    <div class="toolbar">Contacts</div>
+                </a>
+
+                <a style="text-decoration: none;" href="./skills.html">
+                    <div class="toolbar">Skills</div>
+                </a>
+
+                <a style="text-decoration: none;" href="./Admin.html">
+                    <div class="toolbar">Admin</div>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 p-4">
+                    <h4>What do you want to do?</h4>
+                   <div class="border border-5 border-warning p-4 ">
+                    <button id="CourseBtn" class="btn btn-outline-warning btn-lg  mb-4">Add New Course</button>
+                    <button id="projectBtn" class="btn btn-outline-warning btn-lg mb-4">Add New Project</button>
+                    <button id="delCourseBtn" class="btn btn-outline-warning btn-lg  mb-4"> Delete Course</button>
+                    <button id="delprojectBtn" class="btn btn-outline-warning btn-lg mb-4">Delete Project</button>
+                    <button id="editCourseBtn" class="btn btn-outline-warning btn-lg mb-4"> Edit Courses</button>
+                    <button id="editprojectBtn" class="btn btn-outline-warning btn-lg mb-4"> Edit Projects</button>
+                   </div> 
+                </div>
+
+                <div class="col-sm-9 p-4">
+                    <p id="infoDiv" class="lead"></p>
+                    <form name="myForm" class="p-4 mt-4 border border-5 border-warning">
+                              
+                            <input id="code" class="form-control mb-4" type="text" placeholder="Enter the code">
+                            <input id="name" class="form-control mb-4" type="text" placeholder="Enter the name of courese or project">         
+                            <input id="date" class="form-control mb-4" type="text" placeholder="Enter the Date">
+                            <textarea id="msg1" class="form-control" rows="5" placeholder="Enter Brief describtion of the course or project"></textarea>
+                            <div id="btnsDiv" class=" input-group mt-3">
+                                <button id="addBtn" type="button" class=" form-control btn btn-outline-warning btn-lg m-3"> <i class="fa fa-address-book"></i>
+                                    ADD</button>
+                                <button id="delBtn" type="button" class=" form-control btn btn-outline-warning btn-lg m-3"> <i class="fa fa-trash"></i>
+                                        DELETE</button>
+                                    <button id="editBtn" type="button" class=" form-control btn btn-outline-warning btn-lg m-3"> <i class="fa fa-edit"></i>
+                                    EDIT</button>
+                            </div>  
+                    </form>
+                </div>
+            </div>
+
+            <div class="row bg-dark bg-gradient border border-5 border-warning">
+                <div class="col-sm-2">
+                        <button id="viewContact" class="btn btn-outline-warning mt-4 mb-4 btn-lg">View My Contacts</button>
+                        <h4 id="numberOfMsgs">Latest Message</h>
+                </div>
+               
+                    <div class="col-sm-10">
+                            <form name="displayForm" class="p-5 mt-5 shadow bg-gradient ">
+                                <div class="form-group">
+                                    <label for="from">From:</label>
+                                    <input type="text" class="form-control" id="from">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Contact E-mail:</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="msg">Message:</label>
+                                    <textarea type="text" class="form-control" id="msg2"></textarea>
+                                </div>
+                                <div class="mt-3 p-2">
+                                    <button id="preBtn" type="button" class="btn btn-outline-warning btn-lg m-3"> <i
+                                            class="fa fa-arrow-circle-left"></i>
+                                        previous Message</button>
+                            
+                                    <button id="nextBtn" type="button" class="btn btn-outline-warning btn-lg m-3"> <i
+                                            class="fa fa-arrow-circle-right"></i>
+                                        Next Message</button>
+                                    <button id="delBtnMsg" type="button" class="btn btn-outline-warning btn-lg"> <i class="fa fa-trash"></i>
+                                        Delete Message</button>
+                                </div>
+                            
+                            
+                            </form>
+                    </div>
+               
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+

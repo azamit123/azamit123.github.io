@@ -14,20 +14,20 @@
 }
 
 .toolbar {
-  font-size: 20px;
   color: white;
+  /* border: 3px solid #f6b443; */
   padding: 20px;
 }
 
-h1,
-p {
+h4,
+p,
+label {
   color: white;
 }
-
-span {
+span,
+h5 {
   color: #f6b443;
 }
-
-h5 {
+.info {
   color: #f6b443;
 }

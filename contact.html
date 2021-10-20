@@ -2,7 +2,7 @@
     <title>Contact</title>
     <head>
         <link rel="stylesheet" href="./contact.css">
-        <script src="./courses.js"></script>
+        <script src="./contact.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         
@@ -18,16 +18,16 @@
         <div class="container-fluid bg-dark bg-gradient">
             <div id="container">
                 <div id="toolbar">
-                    <a style="text-decoration: none;" href="./index.html" target="_blank">
+                    <a style="text-decoration: none;" href="./index.html" >
                         <div class="toolbar"> Home </div>
                     </a>
             
             
-                    <a style="text-decoration: none;" href="./aboutme.html" target="_blank">
+                    <a style="text-decoration: none;" href="./aboutme.html" >
                         <div class="toolbar">About Me</div>
                     </a>
             
-                    <a style="text-decoration: none;" href="./courses.html" target="_blank">
+                    <a style="text-decoration: none;" href="./courses.html" >
                         <div class="toolbar">Courses</div>
                     </a>
             
@@ -35,8 +35,16 @@
                         <div class="toolbar">Projects</div>
                     </a>
             
-                    <a style="text-decoration: none;" href="./contact.html" target="_blank">
+                    <a style="text-decoration: none;" href="./contact.html" >
                         <div class="toolbar">Contacts</div>
+                    </a>
+
+                    <a style="text-decoration: none;" href="./skills.html">
+                        <div class="toolbar">Skills</div>
+                    </a>
+                    
+                    <a style="text-decoration: none;" href="./Admin.html">
+                        <div class="toolbar">Admin</div>
                     </a>
             
                 </div>
@@ -56,7 +64,7 @@
                 <div class="row border border-5 border-warning p-3">
                     <div class="col-3">
                         <div>
-                            <p class="info fas fa-phone">Phone <i class="fa fa-phone"></i>
+                            <p class="info">Phone <i class="fa fa-phone"></i>
                             </p>
                             <p>+1 571-457-1133</p>
                         </div>
@@ -83,15 +91,15 @@
                             will reply
                             you shortly.</p>
             
-                        <input type="text" class="form-control mt-5 p-2 ml-3" placeholder="Your Name">
-                        <input type="text" class="form-control  mt-5 p-2 ml-3" placeholder="Your Email">
-                        <textarea class="form-control mt-5 p-2 ml-3" rows="5" placeholder="Message For Me"></textarea>
+                        <input id="name" type="text" class="form-control mt-5 p-2 ml-3" placeholder="Your Name" required>
+                        <input id="email" type="text" class="form-control  mt-5 p-2 ml-3" placeholder="Your Email" required>
+                        <textarea id="message" class="form-control mt-5 p-2 ml-3" rows="5" placeholder="Message For Me"></textarea>
                        
                     </div>
             
                 </div>
                 <div class="d-grid mt-3">
-                    <button type="button" class="btn btn-outline-warning mb-5 btn-lg"> <i class="fa fa-paper-plane"></i>   Send Me A Message</button>
+                    <button id="msgBtn" type="button" class="btn btn-outline-warning mb-5 btn-lg"> <i class="fa fa-paper-plane"></i>   Send Me A Message</button>
                 </div>
                 
             </div>

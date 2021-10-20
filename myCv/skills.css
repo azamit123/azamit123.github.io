@@ -1,0 +1,35 @@
+#container {
+  display: grid;
+  grid-template-areas:
+    "toolbar toolbar"
+    "imageDiv cont";
+  width: 100%;
+}
+
+#toolbar {
+  grid-area: toolbar;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+.toolbar {
+  color: white;
+  /* border: 3px solid #f6b443; */
+  padding: 20px;
+}
+
+h3,
+p {
+  color: white;
+}
+h3 {
+  color: black;
+}
+span,
+h5 {
+  color: #f6b443;
+}
+.info {
+  color: #f6b443;
+}

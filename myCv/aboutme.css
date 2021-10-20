@@ -1,0 +1,41 @@
+#wrapper {
+  background-color: black;
+}
+
+#container {
+  display: grid;
+  grid-template-areas:
+    "tool tool tool"
+    "head head head"
+    "pic perInfo perInfo2";
+  background-image: linear-gradient(to left, gray 0%, black 100%);
+  background-blend-mode: multiply;
+}
+
+#toolbar {
+  grid-area: tool;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  column-gap: 40px;
+}
+.toolbar {
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+}
+
+p,
+h1 {
+  color: white;
+}
+p {
+  font-size: 1.2rem;
+}
+
+span {
+  color: #f6b443;
+}
+a div {
+  color: white;
+}
